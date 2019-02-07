@@ -179,6 +179,11 @@ namespace Opc.Ua.Export
 
                     if (o.Value != null)
                     {
+                        string[] backup = this.NamespaceUris;
+
+                        this.NamespaceUris = context.NamespaceUris.ToArray();
+
+
                         XmlEncoder encoder = CreateEncoder(context);
 
                         Variant variant = new Variant(o.Value);
@@ -187,6 +192,8 @@ namespace Opc.Ua.Export
                         XmlDocument document = new XmlDocument();
                         document.InnerXml = encoder.Close();
                         value.Value = document.DocumentElement;
+
+                        this.NamespaceUris = backup;
                     }
 
                     exportedNode = value;
