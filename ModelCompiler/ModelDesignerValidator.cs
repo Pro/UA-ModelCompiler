@@ -52,7 +52,7 @@ namespace Opc.Ua.ModelCompiler
         {
             m_context = ServiceMessageContext.GlobalContext;
             m_startId = startId;
-            EmbeddedResourcePath = "Opc.Ua.ModelCompiler.Design";
+            EmbeddedResourcePath = "Opc.Ua.ModelCompiler.Design.v104";
         }
         #endregion
 
